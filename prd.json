@@ -1,0 +1,546 @@
+{
+  "projectOverview": {
+    "name": "조은나무 목재재단 서비스",
+    "description": "온라인 목재 재단 및 가공 주문 플랫폼",
+    "version": "2.0",
+    "projectType": "React Web Application",
+    "timeline": "3-4 months",
+    "priority": "High"
+  },
+  "businessRequirements": {
+    "primaryGoals": [
+      "사용자 친화적인 목재 주문 프로세스 제공",
+      "복잡한 가공 옵션의 직관적 선택 인터페이스",
+      "실시간 가격 계산 및 할인 적용",
+      "모바일 최적화된 반응형 디자인",
+      "결제 시스템 연동을 통한 원활한 주문 완료"
+    ],
+    "targetMarket": "DIY 목공 애호가, 소상공인, 인테리어 업체",
+    "revenueModel": "목재 판매 및 가공 서비스 수수료",
+    "competitiveAdvantage": [
+      "다양한 목재 종류 및 가공 옵션",
+      "실시간 상담 서비스",
+      "정확한 가격 계산 시스템",
+      "신속한 주문 처리"
+    ]
+  },
+  "targetUsers": {
+    "primaryPersonas": [
+      {
+        "name": "DIY 목공 애호가",
+        "age": "25-45",
+        "characteristics": [
+          "개인 프로젝트용 소량 주문",
+          "다양한 가공 옵션 필요",
+          "가격 민감도 높음",
+          "모바일 주문 선호"
+        ],
+        "goals": [
+          "정확한 사이즈의 목재 구매",
+          "합리적인 가격으로 가공 서비스 이용",
+          "빠른 배송"
+        ]
+      },
+      {
+        "name": "소상공인/목공업체",
+        "age": "30-55",
+        "characteristics": [
+          "대량 주문 가능성",
+          "정기적 주문",
+          "품질 중시",
+          "B2B 결제 방식 선호"
+        ],
+        "goals": [
+          "안정적인 목재 공급처 확보",
+          "일정한 품질 보장",
+          "효율적인 주문 관리"
+        ]
+      }
+    ]
+  },
+  "functionalRequirements": {
+    "coreFeatures": [
+      {
+        "feature": "목재 선택 시스템",
+        "description": "카테고리별 목재 선택 (판재, 각재, 원형봉)",
+        "priority": "Must Have",
+        "userStories": [
+          "사용자는 판재, 각재, 원형봉 중 원하는 목재 유형을 선택할 수 있다",
+          "사용자는 각 카테고리 내에서 세부 목재 종류를 확인할 수 있다",
+          "사용자는 목재별 상세 정보와 가격을 확인할 수 있다"
+        ]
+      },
+      {
+        "feature": "사이즈 입력 및 유효성 검증",
+        "description": "목재 크기 입력 및 실시간 유효성 검증",
+        "priority": "Must Have",
+        "userStories": [
+          "사용자는 폭과 길이를 mm 단위로 입력할 수 있다",
+          "시스템은 선택한 목재의 최소/최대 사이즈 범위를 실시간으로 표시한다",
+          "시스템은 유효하지 않은 사이즈 입력 시 즉시 오류 메시지를 표시한다"
+        ]
+      },
+      {
+        "feature": "가공 옵션 선택",
+        "description": "22가지 가공 옵션 선택 및 조합",
+        "priority": "Must Have",
+        "userStories": [
+          "사용자는 다양한 가공 옵션을 시각적으로 확인할 수 있다",
+          "사용자는 여러 가공 옵션을 조합하여 선택할 수 있다",
+          "시스템은 선택된 가공에 따른 추가 비용을 실시간으로 계산한다"
+        ]
+      },
+      {
+        "feature": "실시간 가격 계산",
+        "description": "목재, 사이즈, 가공, 수량에 따른 동적 가격 계산",
+        "priority": "Must Have",
+        "userStories": [
+          "시스템은 모든 옵션 변경 시 실시간으로 가격을 업데이트한다",
+          "시스템은 수량별 할인율을 자동 적용한다",
+          "시스템은 100원 단위 할인을 적용한다"
+        ]
+      },
+      {
+        "feature": "부자재 선택",
+        "description": "나사, 경첩, 페인트 등 부자재 추가 선택",
+        "priority": "Should Have",
+        "userStories": [
+          "사용자는 카테고리별로 부자재를 검색할 수 있다",
+          "사용자는 부자재를 장바구니에 추가할 수 있다",
+          "시스템은 부자재 가격을 총 금액에 포함한다"
+        ]
+      },
+      {
+        "feature": "장바구니 및 주문서",
+        "description": "선택한 항목들의 장바구니 관리 및 주문서 생성",
+        "priority": "Must Have",
+        "userStories": [
+          "사용자는 여러 목재와 부자재를 장바구니에 담을 수 있다",
+          "사용자는 장바구니에서 수량 변경 및 삭제가 가능하다",
+          "시스템은 최종 주문서를 생성하고 확인할 수 있다"
+        ]
+      },
+      {
+        "feature": "고객 정보 입력 및 주문 제출",
+        "description": "개인정보 입력, 개인정보 동의, 주문서 제출",
+        "priority": "Must Have",
+        "userStories": [
+          "사용자는 필수 개인정보를 입력할 수 있다",
+          "시스템은 개인정보 수집 동의를 받는다",
+          "시스템은 주문서를 이메일로 발송한다"
+        ]
+      },
+      {
+        "feature": "실시간 상담",
+        "description": "네이버 톡톡 연동 실시간 상담 서비스",
+        "priority": "Should Have",
+        "userStories": [
+          "사용자는 언제든지 실시간 상담을 요청할 수 있다",
+          "사용자는 가공 이미지를 첨부하여 문의할 수 있다"
+        ]
+      }
+    ]
+  },
+  "technicalRequirements": {
+    "frontend": {
+      "framework": "React 18.x",
+      "language": "TypeScript",
+      "stateManagement": "Redux Toolkit",
+      "styling": "Tailwind CSS",
+      "formHandling": "React Hook Form",
+      "validation": "Zod",
+      "routing": "React Router v6",
+      "animations": "Framer Motion",
+      "testing": "Jest + React Testing Library"
+    },
+    "backend": {
+      "runtime": "Node.js",
+      "framework": "Express.js",
+      "database": "PostgreSQL",
+      "orm": "Prisma",
+      "authentication": "JWT",
+      "emailService": "NodeMailer",
+      "fileStorage": "AWS S3"
+    },
+    "deployment": {
+      "hosting": "Vercel/Netlify",
+      "cicd": "GitHub Actions",
+      "monitoring": "Sentry",
+      "analytics": "Google Analytics 4"
+    },
+    "thirdPartyIntegrations": [
+      {
+        "service": "네이버 페이",
+        "purpose": "결제 처리",
+        "implementation": "네이버 쇼핑 API 연동"
+      },
+      {
+        "service": "네이버 톡톡",
+        "purpose": "실시간 상담",
+        "implementation": "외부 링크 연동"
+      },
+      {
+        "service": "이메일 발송",
+        "purpose": "주문서 전송",
+        "implementation": "SMTP 서버 연동"
+      }
+    ]
+  },
+  "dataModels": {
+    "LumberCategory": {
+      "id": "string",
+      "name": "string",
+      "type": "'panel' | 'lumber' | 'round'",
+      "description": "string",
+      "products": "Product[]"
+    },
+    "Product": {
+      "id": "string",
+      "title": "string",
+      "categoryId": "string",
+      "thickness": "number",
+      "minWidth": "number",
+      "maxWidth": "number",
+      "minLength": "number",
+      "maxLength": "number",
+      "basePrice": "number",
+      "weight": "number",
+      "lossRate": "number",
+      "cutPrice": "number",
+      "discountRates": "DiscountRate[]",
+      "image": "string",
+      "keywords": "string[]"
+    },
+    "WorkOption": {
+      "id": "string",
+      "title": "string",
+      "basePrice": "number",
+      "additionalPrice": "number",
+      "description": "string",
+      "image": "string"
+    },
+    "Material": {
+      "id": "string",
+      "title": "string",
+      "category": "string",
+      "price": "number",
+      "discountPrice": "number",
+      "image": "string",
+      "description": "string"
+    },
+    "CartItem": {
+      "id": "string",
+      "productId": "string",
+      "width": "number",
+      "length": "number",
+      "quantity": "number",
+      "workOptions": "string[]",
+      "materials": "MaterialItem[]",
+      "customRequest": "string",
+      "calculatedPrice": "number"
+    },
+    "Order": {
+      "id": "string",
+      "customerInfo": "CustomerInfo",
+      "items": "CartItem[]",
+      "totalPrice": "number",
+      "discountAmount": "number",
+      "finalPrice": "number",
+      "status": "'pending' | 'confirmed' | 'processing' | 'completed'",
+      "createdAt": "Date",
+      "updatedAt": "Date"
+    },
+    "CustomerInfo": {
+      "name": "string",
+      "email": "string",
+      "phone": "string?",
+      "company": "string?",
+      "agreeToTerms": "boolean"
+    }
+  },
+  "userJourney": {
+    "steps": [
+      {
+        "step": 1,
+        "title": "목재 종류 선택",
+        "description": "판재, 각재, 원형봉 중 선택",
+        "userActions": ["카테고리 선택", "세부 목재 종류 선택"],
+        "systemResponses": ["선택 가능한 옵션 표시", "목재별 상세 정보 표시"]
+      },
+      {
+        "step": 2,
+        "title": "사이즈 및 가공 선택",
+        "description": "폭, 길이 입력 및 가공 옵션 선택",
+        "userActions": [
+          "폭, 길이 입력",
+          "가공 옵션 선택",
+          "요청사항 입력",
+          "장바구니에 담기"
+        ],
+        "systemResponses": [
+          "사이즈 유효성 검증",
+          "실시간 가격 계산",
+          "선택된 옵션 표시"
+        ]
+      },
+      {
+        "step": 3,
+        "title": "부자재 선택",
+        "description": "필요한 부자재 추가 선택",
+        "userActions": ["부자재 카테고리 선택", "부자재 장바구니 추가"],
+        "systemResponses": ["카테고리별 부자재 표시", "부자재 가격 계산"]
+      },
+      {
+        "step": 4,
+        "title": "주문서 확인",
+        "description": "선택한 모든 항목과 총 가격 확인",
+        "userActions": ["주문 내역 확인", "수량 조정"],
+        "systemResponses": [
+          "총 금액 계산",
+          "할인 금액 표시",
+          "최종 결제 수량 계산"
+        ]
+      },
+      {
+        "step": 5,
+        "title": "개인정보 입력",
+        "description": "고객 정보 입력 및 주문서 전송",
+        "userActions": ["개인정보 입력", "개인정보 이용 동의", "주문서 전송"],
+        "systemResponses": [
+          "입력 정보 유효성 검증",
+          "주문서 이메일 발송",
+          "주문 번호 생성"
+        ]
+      },
+      {
+        "step": 6,
+        "title": "결제 안내",
+        "description": "결제 방법 안내 및 외부 결제 페이지 연결",
+        "userActions": ["결제 페이지 이동"],
+        "systemResponses": ["결제 안내 표시", "네이버 쇼핑 결제 연결"]
+      }
+    ]
+  },
+  "uiUxRequirements": {
+    "designPrinciples": [
+      "직관적이고 단순한 인터페이스",
+      "단계별 명확한 진행 과정 표시",
+      "실시간 피드백 제공",
+      "모바일 우선 반응형 디자인"
+    ],
+    "responsiveBreakpoints": {
+      "mobile": "320px - 768px",
+      "tablet": "768px - 1024px",
+      "desktop": "1024px+"
+    },
+    "keyComponents": [
+      {
+        "component": "StepIndicator",
+        "description": "6단계 진행 과정 표시",
+        "requirements": [
+          "현재 단계 하이라이트",
+          "완료된 단계 표시",
+          "클릭으로 이전 단계 이동 가능"
+        ]
+      },
+      {
+        "component": "ProductSelector",
+        "description": "목재 종류 선택 인터페이스",
+        "requirements": [
+          "카테고리별 그룹화",
+          "제품 이미지 및 정보 표시",
+          "선택 상태 시각적 표시"
+        ]
+      },
+      {
+        "component": "SizeInput",
+        "description": "사이즈 입력 컴포넌트",
+        "requirements": [
+          "실시간 유효성 검증",
+          "최소/최대 범위 표시",
+          "오류 메시지 표시"
+        ]
+      },
+      {
+        "component": "WorkOptionSelector",
+        "description": "가공 옵션 선택 인터페이스",
+        "requirements": [
+          "이미지와 설명 표시",
+          "다중 선택 지원",
+          "선택된 옵션 요약 표시"
+        ]
+      },
+      {
+        "component": "PriceCalculator",
+        "description": "실시간 가격 계산 표시",
+        "requirements": [
+          "항목별 가격 상세 표시",
+          "할인 금액 표시",
+          "최종 금액 강조 표시"
+        ]
+      },
+      {
+        "component": "ShoppingCart",
+        "description": "장바구니 인터페이스",
+        "requirements": [
+          "항목 추가/삭제/수정",
+          "총 금액 계산",
+          "항목별 상세 정보 표시"
+        ]
+      }
+    ],
+    "colorScheme": {
+      "primary": "#2D5A27 (조은나무 그린)",
+      "secondary": "#8B4513 (목재 브라운)",
+      "accent": "#FFD700 (강조 골드)",
+      "neutral": "#F5F5F5 (배경 그레이)",
+      "error": "#DC2626 (에러 레드)",
+      "success": "#059669 (성공 그린)"
+    },
+    "typography": {
+      "headings": "Noto Sans KR Bold",
+      "body": "Noto Sans KR Regular",
+      "captions": "Noto Sans KR Light"
+    }
+  },
+  "performanceRequirements": {
+    "loadTime": "< 3초 (첫 화면 로딩)",
+    "priceCalculation": "< 100ms (가격 계산 응답)",
+    "formValidation": "< 50ms (실시간 유효성 검증)",
+    "imageLoading": "Progressive loading with lazy loading",
+    "coreWebVitals": {
+      "LCP": "< 2.5초",
+      "FID": "< 100ms",
+      "CLS": "< 0.1"
+    }
+  },
+  "securityRequirements": [
+    "개인정보 암호화 저장",
+    "HTTPS 통신 필수",
+    "XSS 방지",
+    "CSRF 토큰 적용",
+    "입력 데이터 검증 및 sanitization",
+    "개인정보 처리방침 준수"
+  ],
+  "accessibilityRequirements": [
+    "WCAG 2.1 AA 준수",
+    "키보드 네비게이션 지원",
+    "스크린 리더 호환성",
+    "충분한 색상 대비",
+    "대체 텍스트 제공",
+    "포커스 인디케이터 명확성"
+  ],
+  "testingStrategy": {
+    "unitTesting": {
+      "coverage": "> 80%",
+      "tools": "Jest, React Testing Library"
+    },
+    "integrationTesting": {
+      "focus": "가격 계산 로직, 폼 유효성 검증",
+      "tools": "Jest, MSW"
+    },
+    "e2eTesting": {
+      "scenarios": ["전체 주문 프로세스", "가격 계산 정확성", "반응형 디자인"],
+      "tools": "Playwright"
+    },
+    "performanceTesting": {
+      "tools": "Lighthouse, WebPageTest",
+      "metrics": "Core Web Vitals"
+    }
+  },
+  "deploymentStrategy": {
+    "environments": [
+      {
+        "name": "Development",
+        "url": "dev.lumbercutting.com",
+        "purpose": "개발 및 테스트"
+      },
+      {
+        "name": "Staging",
+        "url": "staging.lumbercutting.com",
+        "purpose": "프로덕션 배포 전 최종 검증"
+      },
+      {
+        "name": "Production",
+        "url": "www.ecogoodtree.com",
+        "purpose": "실제 서비스"
+      }
+    ],
+    "cicdPipeline": [
+      "코드 푸시",
+      "자동 빌드",
+      "유닛 테스트 실행",
+      "E2E 테스트 실행",
+      "보안 스캔",
+      "성능 테스트",
+      "스테이징 배포",
+      "수동 승인",
+      "프로덕션 배포"
+    ]
+  },
+  "riskAssessment": [
+    {
+      "risk": "복잡한 가격 계산 로직으로 인한 오류",
+      "probability": "Medium",
+      "impact": "High",
+      "mitigation": "철저한 테스트 케이스 작성 및 단계별 검증"
+    },
+    {
+      "risk": "모바일 환경에서의 복잡한 UI 조작성 저하",
+      "probability": "Medium",
+      "impact": "Medium",
+      "mitigation": "모바일 우선 설계 및 사용성 테스트"
+    },
+    {
+      "risk": "외부 결제 시스템 연동 이슈",
+      "probability": "Low",
+      "impact": "High",
+      "mitigation": "충분한 테스트 환경 구축 및 대안 결제 수단 준비"
+    },
+    {
+      "risk": "개인정보 보호 규정 미준수",
+      "probability": "Low",
+      "impact": "Very High",
+      "mitigation": "법무팀 검토 및 개인정보 보호 교육"
+    }
+  ],
+  "successMetrics": {
+    "businessMetrics": [
+      "주문 완료율 > 85%",
+      "평균 주문 금액 증가 > 15%",
+      "고객 재주문률 > 40%",
+      "고객 만족도 > 4.5/5.0"
+    ],
+    "technicalMetrics": [
+      "페이지 로딩 시간 < 3초",
+      "시스템 가용성 > 99.9%",
+      "버그 발생률 < 0.1%",
+      "모바일 사용성 점수 > 90점"
+    ],
+    "userExperienceMetrics": [
+      "단계별 이탈률 < 10%",
+      "가격 계산 오류율 < 0.01%",
+      "고객 문의 감소 > 30%",
+      "평균 주문 완료 시간 < 10분"
+    ]
+  },
+  "maintenanceAndSupport": {
+    "monitoringAndLogging": [
+      "애플리케이션 성능 모니터링",
+      "에러 로깅 및 알림",
+      "사용자 행동 분석",
+      "보안 이벤트 모니터링"
+    ],
+    "backupAndRecovery": [
+      "일일 데이터베이스 백업",
+      "재해 복구 계획",
+      "데이터 복구 테스트"
+    ],
+    "documentation": [
+      "API 문서",
+      "사용자 매뉴얼",
+      "운영 가이드",
+      "개발자 가이드"
+    ]
+  }
+}
