@@ -43,11 +43,11 @@ export function PriceCalculator({ className, showDetailed = true }: PriceCalcula
   }
 
   const area = (currentItem.width * currentItem.length) / 1000000; // m²
-  const totalArea = area * currentItem.quantity;
+  const totalArea = area * (currentItem.quantity || 0);
   
   // Find applicable discount rate
   const applicableDiscount = selectedProduct.discountRates.find(rate => 
-    currentItem.quantity >= rate.minQuantity && currentItem.quantity <= rate.maxQuantity
+    (currentItem.quantity || 0) >= rate.minQuantity && (currentItem.quantity || 0) <= rate.maxQuantity
   );
 
   // Calculate unit costs for display
@@ -91,7 +91,7 @@ export function PriceCalculator({ className, showDetailed = true }: PriceCalcula
           <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
             <div>
               <div className="text-sm text-gray-600">수량</div>
-              <div className="font-medium">{currentItem.quantity}개</div>
+              <div className="font-medium">{currentItem.quantity || 0}개</div>
             </div>
             <div>
               <div className="text-sm text-gray-600">총 면적</div>
@@ -254,7 +254,7 @@ export function PriceCalculator({ className, showDetailed = true }: PriceCalcula
                     key={index}
                     className={cn(
                       "p-2 rounded border text-center",
-                      currentItem.quantity >= rate.minQuantity && currentItem.quantity <= rate.maxQuantity
+                      (currentItem.quantity || 0) >= rate.minQuantity && (currentItem.quantity || 0) <= rate.maxQuantity
                         ? "bg-green-100 border-green-300 text-green-800"
                         : "bg-gray-50 border-gray-200 text-gray-600"
                     )}

@@ -3,7 +3,7 @@
  */
 
 import { createSlice, PayloadAction, createSelector } from '@reduxjs/toolkit';
-import { CartItem, MaterialItem, PriceBreakdown, Product, WorkOption, Material, DiscountRate } from '@/types';
+import { CartItem, PriceBreakdown, Product, WorkOption, Material } from '@/types';
 import { RootState } from '@/store';
 
 interface CartState {

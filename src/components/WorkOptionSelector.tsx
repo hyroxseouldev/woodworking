@@ -13,11 +13,9 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import {
   Settings,
-  Check,
   ArrowRight,
   MessageSquare,
   DollarSign,
@@ -34,7 +32,7 @@ interface WorkOptionSelectorProps {
 
 export function WorkOptionSelector({ className }: WorkOptionSelectorProps) {
   const dispatch = useAppDispatch();
-  const { workOptions, loading } = useAppSelector((state) => state.products);
+  const { workOptions } = useAppSelector((state) => state.products);
   const { currentItem } = useAppSelector((state) => state.cart);
   const { selectedProduct } = useAppSelector((state) => state.products);
 
@@ -92,7 +90,7 @@ export function WorkOptionSelector({ className }: WorkOptionSelectorProps) {
     dispatch(nextStep());
   };
 
-  const calculateOptionPrice = (option: any) => {
+  const calculateOptionPrice = (option: { basePrice: number; additionalPrice: number }) => {
     if (!currentItem?.width || !currentItem?.length || !currentItem?.quantity) {
       return option.basePrice;
     }

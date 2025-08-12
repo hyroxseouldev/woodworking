@@ -109,7 +109,7 @@ const uiSlice = createSlice({
       state.currentStep = newStep;
 
       // Update step states
-      state.steps = state.steps.map((step, index) => ({
+      state.steps = state.steps.map((step) => ({
         ...step,
         isActive: step.step === newStep,
         isCompleted: step.step < newStep,
@@ -128,7 +128,7 @@ const uiSlice = createSlice({
         }
 
         // Update step states
-        state.steps = state.steps.map((step, index) => ({
+        state.steps = state.steps.map((step) => ({
           ...step,
           isActive: step.step === newStep,
           isCompleted: step.step < newStep,
@@ -142,7 +142,7 @@ const uiSlice = createSlice({
         state.currentStep = newStep;
 
         // Update step states
-        state.steps = state.steps.map((step, index) => ({
+        state.steps = state.steps.map((step) => ({
           ...step,
           isActive: step.step === newStep,
           isCompleted: step.step < newStep,
@@ -318,7 +318,7 @@ const uiSlice = createSlice({
     },
 
     // Reset UI state
-    resetUi: (state) => {
+    resetUi: () => {
       return { ...initialState };
     },
   },

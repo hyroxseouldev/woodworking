@@ -3,7 +3,7 @@
  */
 
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { Order, CustomerInfo, CartItem, OrderStatus, ApiResponse } from '@/types';
+import { Order, CustomerInfo, CartItem, OrderStatus } from '@/types';
 
 interface OrderState {
   currentOrder: Order | null;

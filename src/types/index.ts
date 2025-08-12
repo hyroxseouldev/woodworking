@@ -144,7 +144,8 @@ export interface SizeInputForm {
 }
 
 export interface CustomerForm extends CustomerInfo {
-  // Additional form-specific fields can be added here
+  confirmPassword?: string;
+  agreeToMarketing?: boolean;
 }
 
 // API Response Types
@@ -164,5 +165,5 @@ export interface ValidationError {
 export interface PriceCalculationError {
   code: string;
   message: string;
-  details?: any;
+  details?: Record<string, unknown>;
 }

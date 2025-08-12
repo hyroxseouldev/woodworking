@@ -3,7 +3,7 @@
  */
 
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { LumberCategory, Product, WorkOption, Material, ApiResponse } from '@/types';
+import { LumberCategory, Product, WorkOption, Material } from '@/types';
 
 interface ProductsState {
   categories: LumberCategory[];

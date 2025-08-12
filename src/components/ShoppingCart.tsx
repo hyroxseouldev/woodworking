@@ -26,8 +26,7 @@ import {
   updateQuantity, 
   removeFromCart, 
   clearCart,
-  addToCart,
-  clearCurrentItem
+  addToCart
 } from '@/store/slices/cartSlice';
 import { nextStep, addNotification } from '@/store/slices/uiSlice';
 import { cn } from '@/lib/utils';
@@ -117,7 +116,7 @@ export function ShoppingCart({ className, showAddToCart = false, allowCheckout =
     return materialIds.map(item => {
       const material = materials.find(m => m.id === item.id);
       return material ? { ...material, orderQuantity: item.quantity } : null;
-    }).filter(Boolean);
+    }).filter((item): item is NonNullable<typeof item> => item !== null);
   };
 
   if (cartItems.length === 0 && !showAddToCart) {
@@ -271,7 +270,7 @@ export function ShoppingCart({ className, showAddToCart = false, allowCheckout =
                       <div>
                         <div className="text-sm font-medium text-gray-700 mb-2">선택한 부자재:</div>
                         <div className="space-y-1">
-                          {selectedMaterials.map((material: any) => (
+                          {selectedMaterials.map((material) => (
                             <div key={material.id} className="text-xs text-gray-600 flex justify-between">
                               <span>{material.title}</span>
                               <span>{material.orderQuantity}개 × {material.discountPrice || material.price}원</span>

@@ -27,14 +27,11 @@ import {
   Award,
   Truck
 } from 'lucide-react';
-import { previousStep, nextStep, setCurrentStep } from '@/store/slices/uiSlice';
-import { StepNumber } from '@/types';
+import { previousStep, nextStep } from '@/store/slices/uiSlice';
 
 export default function HomePage() {
   const dispatch = useAppDispatch();
   const { currentStep } = useAppSelector(state => state.ui);
-  const { selectedProduct } = useAppSelector(state => state.products);
-  const { currentItem } = useAppSelector(state => state.cart);
 
   useEffect(() => {
     // Initialize data on app load

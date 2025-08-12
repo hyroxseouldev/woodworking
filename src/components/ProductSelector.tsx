@@ -3,14 +3,14 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Loader2, ArrowRight, Ruler, Weight, Scissors } from 'lucide-react';
 import { useAppSelector, useAppDispatch } from '@/store';
 import { fetchCategories, selectCategory, selectProduct } from '@/store/slices/productsSlice';
 import { nextStep, addNotification } from '@/store/slices/uiSlice';
-import { LumberCategory, Product } from '@/types';
+import { Product } from '@/types';
 import { cn } from '@/lib/utils';
 
 interface ProductSelectorProps {
